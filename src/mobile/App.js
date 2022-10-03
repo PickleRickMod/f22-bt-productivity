@@ -6,22 +6,34 @@
  * @flow strict-local
  */
 
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NativeBaseProvider } from 'native-base';
 import React from 'react';
-// @ts-ignore
-// import type {Node} from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, useColorScheme } from 'react-native';
 
 import Login from './components/Login';
 
-const App /*: () => Node*/ = () => {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
+  const colorScheme = useColorScheme();
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <NativeBaseProvider>
-        <SafeAreaView>
-          <Login />
-        </SafeAreaView>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name="Home" component={Login} />
+          {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
+        </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
   );
