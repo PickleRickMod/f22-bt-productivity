@@ -1,5 +1,5 @@
-import { Button, Input, Text, View, VStack } from 'native-base';
 import React, { useState } from 'react';
+import { Button, Input, Text, View, VStack } from 'native-base';
 import { StyleSheet, useColorScheme } from 'react-native';
 
 const Login = () => {
@@ -8,8 +8,9 @@ const Login = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const styles = StyleSheet.create({
-    viewStyles: {
+    vStackStyles: {
       marginHorizontal: 15,
       marginTop: 20,
     },
@@ -17,6 +18,7 @@ const Login = () => {
       color: colorScheme === 'dark' ? 'white' : 'black',
       fontWeight: '800',
       fontStyle: 'italic',
+      textAlign: 'center',
     },
     subtitleStyles: {
       color: colorScheme === 'dark' ? 'white' : 'black',
@@ -37,7 +39,7 @@ const Login = () => {
   });
   return (
     <>
-      <VStack space={3} style={styles.viewStyles}>
+      <VStack space={3} style={styles.vStackStyles}>
         <Text fontSize="4xl" style={styles.titleStyles}>
           CareersGO
         </Text>
