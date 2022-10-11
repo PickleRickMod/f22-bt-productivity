@@ -46,7 +46,7 @@ const Login = () => {
             CareersGO
           </Text>
           <Text fontSize="xl" style={styles.subtitleStyles}>
-            Lets create a CareersGO account!
+            Lets create an account!
           </Text>
           <View>
             <Text style={styles.defaultTextStyles}>Your First Name:</Text>
