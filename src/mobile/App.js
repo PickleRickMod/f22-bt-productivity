@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import {
   DarkTheme,
   DefaultTheme,
@@ -14,9 +6,9 @@ import {
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NativeBaseProvider } from 'native-base';
 import React from 'react';
-import { SafeAreaView, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 
-import Login from './components/Login';
+import Login from './pages/Login';
 
 const Stack = createNativeStackNavigator();
 
